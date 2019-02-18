@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>聚美优品</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <style>
+        .u-flyer{display: block;width: 50px;height: 50px;border-radius: 50px;position: fixed;z-index: 9999;}  
+    </style>
+    <script src="lib/jquery2.0.3.js" charset="UTF-8"></script>
+    <script src="lib/fly.js"></script>
+    <script src="lib/jquery.cookie.js"></script>
+    <script src="js/index.js" charset="UTF-8"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="header_top">
+            <div class="header_top_box clearfix">
+                <ul class="header_top_left fl">
+                    <li>欢迎来到聚美！</li>
+                    <li><a href="html/login.html">请登录</a></li>
+                    <li><a href="html/register.html">快速注册</a></li>
+                </ul>
+                <ul class="header_top_right fr">
+                    <li><a href="###">正品保证</a></li>
+                    <li><a href="###">订单查询</a></li>
+                    <li><a href="###"><span class="icon_favorite"></span>收藏的品牌</a></li>
+                    <li class="item_jumei">
+                        <a href="###">我的聚美<span class="icon_arrow_down"></span></a>
+                        <div class="sub_nav">
+                            <ul>
+                                <li><a href="###">我的订单</a></li>
+                                <li><a href="###">我的现金券</a></li>
+                                <li><a href="###">我的红包</a></li>
+                                <li><a href="###">我的余额</a></li>
+                                <li><a href="###">我的心愿单</a></li>
+                                <li><a href="###">我的提现退款</a></li>
+                                <li><a href="###">我的收藏</a></li>
+                                <li><a href="###">会员中心</a></li>
+                                <li><a href="###">礼品卡兑换</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item_mobile">
+                        <a href="###">
+                            <span class="line"></span>
+                            <span class="icon_mobile"></span>
+                            手机聚美
+                        </a>
+                    </li>
+                    <li>
+                        <span class="line"></span>
+                    </li>
+                    <li class="item_more">
+
+                        <a href="###">更多<span class="icon_arrow_down"></span></a>
+                        <div class="sub_nav">
+                            <ul>
+                                <li><a href="###">邀请好友</a></li>
+                                <li><a href="###">加入收藏</a></li>
+                                <li><a href="###">新浪微博</a></li>
+                                <li><a href="###">聚美微信</a></li>
+                                <li><a href="###">百度贴吧</a></li>
+                                <li><a href="###">腾讯微博</a></li>
+                                <li><a href="###">人人公众主页</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header_center clearfix">
+            <h1 class="logo fl">
+                <a href="###">聚美优品</a>
+            </h1>
+            <div class="header_searchbox fl">
+                <form class="clearfix">
+                    <input type="text" class="header_search_input">
+                    <input type="button" class="header_search_btn" value="搜索">
+                </form>
+                <div class="search_result">
+                    <div><span>补水</span><label for="">约2730件</label></div>
+                    <div><span>洁面</span><label for="">约230件</label></div>
+                    <div><span>面膜</span><label for="">约885件</label></div>
+                    <div><span>眼霜</span><label for="">约2730件</label></div>
+                    <div><span>爽肤水</span><label for="">约893件</label></div>
+                    <div><span>口红</span><label for="">约475件</label></div>
+                    <div><span>粉饼</span><label for="">约2730件</label></div>
+                    <div><span>卸妆</span><label for="">约304件</label></div>
+                    <div><span>隔离</span><label for="">约191件</label></div>
+                </div>
+                <ul class="hot_word">
+                    <li class="list"><a href="###">保湿</a></li>
+                    <li><a href="###">面膜</a></li>
+                    <li><a href="###">洗面奶</a></li>
+                    <li><a href="###">补水</a></li>
+                    <li><a href="###">香水</a></li>
+                    <li><a href="###">眼霜</a></li>
+                    <li><a href="###">口红</a></li>
+                    <li><a href="###">护肤套装</a></li>
+                    <li><a href="###">BB霜</a></li>
+                </ul>
+            </div>
+            <div class="cart_box fr" id="cart_box">
+                <a href="#" class="clearfix">
+                    <img src="images/cart.gif" alt="购物车" class="cart_gif">
+                    <span class="text">去购物车结算</span>
+                    <span class="icon_arrow_right"></span>
+                </a>
+                <div class="cart_content" id="cart_content"></div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div class="nav_box clearfix">
+                <nav class="nav_list fl">
+                    <li class="current"><a href="###" class="home">首页</a></li>
+                    <li><a href="###">极速免税店</a></li>
+                    <li><a href="###">母婴特卖</a></li>
+                    <li>
+                        <a href="###">美妆商城<span></span></a>
+                        <div class="nav_content clearfix" id="nav_content">
+                            <div class="imglist fl">
+                                <a href="###"><img src="images/nav_01.jpg" alt=""></a>
+                                <a href="###"><img src="images/nav_02.jpg" alt=""></a>
+                            </div>
+                            <div class="nav_inner fl clearfix">
+                                <dl style="border-left: none">
+                                    <dt>
+                                        <a href="###">国际大牌</a>
+                                    </dt>
+                                    <dd><a href="###">兰蔻</a></dd>
+                                    <dd><a href="###">娇韵诗</a></dd>
+                                    <dd><a href="###">伊丽莎白雅顿</a></dd>
+                                    <dd><a href="###">雅诗兰黛</a></dd>
+                                    <dd><a href="###">欧莱雅</a></dd>
+                                    <dd><a href="###">兰芝</a></dd>
+                                    <dd><a href="###">倩碧</a></dd>
+                                    <dd><a href="###">雅漾</a></dd>
+                                    <dd><a href="###">菲诗小铺</a></dd>
+                                    <dd><a href="###">悦诗风吟</a></dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <a href="###">护肤</a>
+                                    </dt>
+                                    <dd><a href="###">洁面</a></dd>
+                                    <dd><a href="###">爽肤水</a></dd>
+                                    <dd><a href="###">精华</a></dd>
+                                    <dd><a href="###">乳液</a></dd>
+                                    <dd><a href="###">面霜</a></dd>
+                                    <dd><a href="###">眼霜</a></dd>
+                                    <dd><a href="###">面膜</a></dd>
+                                    <dd><a href="###">护肤套装</a></dd>
+
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <a href="###">彩妆</a>
+                                    </dt>
+                                    <dd><a href="###">卸妆</a></dd>
+                                    <dd><a href="###">BB霜</a></dd>
+                                    <dd><a href="###">粉底液</a></dd>
+                                    <dd><a href="###">粉饼</a></dd>
+                                    <dd><a href="###">眼影</a></dd>
+                                    <dd><a href="###">眼线笔</a></dd>
+                                    <dd><a href="###">睫毛膏</a></dd>
+                                    <dd><a href="###">眉笔</a></dd>
+                                    <dd><a href="###">口红</a></dd>
+                                    <dd><a href="###">腮红</a></dd>
+                                </dl>
+                                <dl style="border-left: none; border-bottom:none">
+                                    <dt>
+                                        <a href="###">香氛</a>
+                                    </dt>
+                                    <dd><a href="###">女士香水</a></dd>
+                                    <dd><a href="###">男士香水</a></dd>
+                                    <dd><a href="###">中性香水</a></dd>
+                                    <dd><a href="###">Q版香水</a></dd>
+                                    <dd><a href="###">香水套装</a></dd>
+                                    <dd><a href="###">精油</a></dd>
+                                </dl>
+                                <dl style="border-bottom:none">
+                                    <dt>
+                                        <a href="###">男士专区</a>
+                                    </dt>
+                                    <dd><a href="###">洁面</a></dd>
+                                    <dd><a href="###">爽肤水</a></dd>
+                                    <dd><a href="###">面霜</a></dd>
+                                    <dd><a href="###">精华</a></dd>
+                                    <dd><a href="###">护肤套装</a></dd>
+                                    <dd><a href="###">洗发</a></dd>
+                                    <dd><a href="###">沐浴</a></dd>
+                                </dl>
+                                <dl style="border-bottom:none">
+                                    <dt>
+                                        <a href="###">热门搜索</a>
+                                    </dt>
+                                    <dd><a href="###">面膜贴</a></dd>
+                                    <dd><a href="###">洗面奶</a></dd>
+                                    <dd><a href="###">唇膏</a></dd>
+                                    <dd><a href="###">去黑头</a></dd>
+                                    <dd><a href="###">祛斑</a></dd>
+                                    <dd><a href="###">隔离</a></dd>
+                                    <dd><a href="###">去角质</a></dd>
+                                    <dd><a href="###">指甲油</a></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="###">国际轻奢</a></li>
+                    <li><a href="###">服装运动</a></li>
+                    <li><a href="###">鞋包配饰</a></li>
+                </nav>
+                <ul class="nav_icon fr clearfix">
+                    <li><a href="###"><img src="images/z_01new.jpg" alt=""></a></li>
+                    <li><a href="###"><img src="images/z02.jpg" alt=""></a></li>
+                    <li><a href="###"><img src="images/z03.jpg" alt=""></a></li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
+    <!-- 广告 -->
+    <div class="banner">
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+    <!-- home_top_tab -->
+    <div class="home_top_tab">
+        <ul class="tab_menu clearfix" id="tab_menu">
+            <li class="current">
+                今日疯抢
+            </li>
+            <li>
+                明日预告
+            </li>
+        </ul>
+        <div class="tab_wrapper">
+            <div class="tab_box">
+                <div class="home_top_ad">
+                    <div class="home_ad_list">
+                        <a href="###"><img src="images/tody_ht01.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht02.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht03.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht04.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht05.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht06.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht07.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab_box" style="display: none">
+                <div class="home_top_ad">
+                    <div class="home_ad_list">
+                        <a href="###"><img src="images/tody_ht10.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht11.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht08.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht09.jpg" alt=""></a>
+                        <a href="###"><img src="images/tody_ht12.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 每日必看\今明日爆款\今日推荐品牌团-->
+    <div class="today_must_checkout">
+        <h2 class="title_must_see" id="mustsee"></h2>
+        <div class="must_see_content" id="today_later_tab">
+            <div class="tab_wrapper" id="today_tab_wrapper">
+                <!-- <div class="today_tab_content">
+                    <a href="###"
+                        target="_blank" class="today_tab_link">
+                        <img class="all_cart_img" src="../images/1.jpg">
+                        <span class="today_rank_top_1"></span>
+                    </a>
+                    <a href="###"
+                        target="_blank" class="global_tip" style="display: block;">
+                        <span>海外直采</span><span>海外价格</span><span>闪电发货</span>
+                    </a>
+                    <div class="deals_tags">
+                        <span class="tags_list tags_haitao">海淘</span>
+                    </div>
+                    <div class="products_detail">
+                        <div class="products_have_time">
+                            <span class="today_end_time">
+                                <span class="icon">距特卖结束 </span><span class="today_time" end_time="77296">00<em>:</em>21<em>:</em>09<em>:</em>58</span>
+
+                            </span>
+                        </div>
+                        <a href="###"
+                            target="_blank" class="product_short_title">
+                            <em>【官方授权】</em> 【经典“黄春雨”限定升级&amp;不加价】 papa
+                            recipe春雨小蜜罐限量版面膜25g*7片，给肌肤吃一顿蜂蜜大餐，让干枯的肌肤如沐春雨。 </a>
+                        <div class="product_price clearfix">
+                            <div class="goto_cart_wrap all_cart_wrap"><a class="goto_btn goto_cart all_cart" href="javascript:;">加入购物车</a></div>
+
+                            <span class="now_price"><em>¥</em>59.9</span>
+                            <div class="price_wrap">
+                                <div class="icon_wrap">
+                                </div>
+                                <span class="pass_price"><del>¥120</del></span>
+                            </div>
+
+                        </div>
+                        <div class="global_sure_tag">
+                            <span class="g_tag"><img src="../images/029_big.jpg"></span>
+                            <span class="wish_like yahei fr"><em>38</em>人已经购买</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- 今日上新单品 -->
+    <div class="today_new_deal">
+        <div class="today_deal_title">
+            <h2 class="floor_head" id="today_deals">今日上新</h2>
+            <p class="today_deals_tip">每日十点上新</p>
+        </div>
+        <div class="today_new_productlist">
+            <ul class="today_new_ul clearfix" id="today_new_ul">
+
+            </ul>
+            <div class="today_loading" style="display: none;"></div>
+        </div>
+    </div>
+    <!-- 美妆品牌团 -->
+    <div class="brands">
+        <h2 class="brand_head">
+            <a href="###" class="brand-view-more">查看更多&gt;&gt;</a>
+        </h2>
+        <div class="brand_content clearfix">
+            <div class="fl">
+                <a href="###">
+                    <img src="images/brand01.jpg">
+                </a>
+            </div>
+            <div class="fr">
+                <div class="side_content clearfix">
+                    <li>
+                        <a href="###">
+                            <img width="380" height="205" src="images/brandside01.jpg">
+                            <div class="bf-item-info">
+                                <p class="tit">相宜本草新年品牌专场</p>
+                                <p class="subtit">中草药护肤专家健康启程</p>
+                                <p class="sale">满<em>199</em>减<em>100</em>上不封顶</p>
+                                <p class="time_left home_timer" end_time="69910">00<em>天</em>18<em>时</em>23<em>分</em>12<em>秒</em></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img width="380" height="205" src="images/brandside02.jpg">
+                            <div class="bf-item-info">
+                                <p class="tit">丸美品牌专场</p>
+                                <p class="subtit">美从眼前开始</p>
+                                <p class="sale">满<em>199</em>减<em>50</em>上不封顶</p>
+                                <p class="time_left home_timer" end_time="156310">01<em>天</em>18<em>时</em>23<em>分</em>12<em>秒</em></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img width="380" height="205" src="images/brandside03.jpg">
+                            <div class="bf-item-info">
+                                <p class="tit">小迷糊品牌专场</p>
+                                <p class="subtit">简单小迷糊，天然水透肌</p>
+                                <p class="sale">部分满满<em>199</em>减<em>100</em></p>
+                                <p class="time_left home_timer" end_time="242710">02<em>天</em>18<em>时</em>24<em>分</em>19<em>秒</em></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            <img width="380" height="205" src="images/brandside04.jpg">
+                            <div class="bf-item-info">
+                                <p class="tit">雪肌精品牌专场</p>
+                                <p class="subtit">装扮新年 耀美盛典</p>
+                                <p class="sale">满<em>298</em>减<em>30</em>，满<em>498</em>减<em>60</em></p>
+                                <p class="time_left home_timer" end_time="242710">02<em>天</em>18<em>时</em>24<em>分</em>19<em>秒</em></p>
+                            </div>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 左侧的楼层跳跃 -->
+    <div id="home_nav_bar" class="home_nav_bar" style="height: 186px; visibility: visible;">
+        <div class="home_nav_border">
+            <div class="jumei_idx">聚美<br>首页</div>
+            <ul class="home_nav_list">
+                <li class="nav_mustsee">
+                    <a href="#mustsee" class="">
+                        <span>每日必看</span>
+                    </a>
+                </li>
+
+
+                <li class="nav_today_deals">
+                    <a href="#today_deals" class="act">
+                        <span>上新单品</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 右侧固定条栏 -->
+    <div class="ibar" id="iBar" style="z-index: 9990; right: 0px; position: fixed; top: 0px; display: block; height: 100%">
+        <div class="ibar_main_panel" style="left: 0px;">
+            <ul class="ibar_mp_center">
+                <li class="mpbtn_login"><a href="###">
+                        <s></s>登录</a>
+                </li>
+                <li class="mpbtn_cart">
+                    <a href="##" id="loadcart">
+                        <s id="cardend"></s>
+                        <span class="text">购物车</span>
+                        <span class="cart_num">0</span>
+                    </a>
+                </li>
+                <li class="mpbtn_asset">
+                    <a href="##" class="sidebar">
+                        <s></s>我的财产
+                    </a>
+                    <div class="mp_tooltip" style="visibility: hidden">我的财产
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+                <li class="mpbtn_favorite">
+                    <a href="##" class="sidebar">
+                        <s></s>我的心愿单
+                    </a>
+                    <div class="mp_tooltip" style="visibility: hidden">我的心愿单
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+                <li class="mpbtn_histroy">
+                    <a href="##" class="sidebar">
+                        <s></s>
+                        我看过的</a>
+                    <div class="mp_tooltip" style="visibility: hidden">我看过的
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+            </ul>
+            <ul class="ibar_mp_bottom">
+                <li class="mpbtn_qrcode">
+                    <a href="##" class="phonejumei">
+                        <s></s>手机聚美
+                    </a>
+                    <div class="mp_qrcode" style="display: none">
+                        <img src="images/qrcode.png" width="148" height="175">
+                        <s class="icon_arrow_white"></s>
+                    </div>
+                </li>
+                <li class="mpbtn_support">
+                    <a href="##" class="sidebar">
+                        <s></s>客服中心
+                    </a>
+                    <div class="mp_tooltip" style="visibility: hidden">客服中心
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+                <li class="mpbtn_gotop" id="gotop" style="display: none">
+                    <a href="##" class="btn_gotop sidebar">
+                        <s></s>
+                        返回顶部
+                    </a>
+                    <div class="mp_tooltip" style="visibility: hidden">返回顶部
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- 购物车 -->
+    <div class="ibar_sub_panel" style="display: block; right: -247px;z-index:99;position:fixed">
+        <a href="###" class="ibar_closebtn" title="关闭"></a>
+        <span class="ibar_loading_text">正在为您努力加载数据！</span>
+        
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="footer_credit" id="footer_credit">
+                <a href="###" class="foot_link mostmall" rel="nofollow">
+                    <span class="first corn"></span>
+                    <span class="con">
+                        <b>值得信赖美妆电商</b>
+                    </span>四千万用户信赖
+                </a>
+                <a href="###" class="foot_link quality" rel="nofollow">
+                    <span class="corn"></span>
+                    <span class="con">
+                        <b>成功在美上市</b>
+                    </span>股票代码NYSE:JMEI
+                </a>
+                <a href="###" class="foot_link back" rel="nofollow">
+                    <span class="corn"></span>
+                    <span class="con">
+                        <b>品牌防伪码</b>
+                    </span>支持品牌官网验真
+                </a>
+                <a href="###" class="foot_link depot" rel="nofollow">
+                    <span class="corn"></span>
+                    <span class="con">
+                        <b>30天无理由退货</b>
+                    </span>只要不满意无理由退货
+                </a>
+                <a href="###" class="foot_link consignment" rel="nofollow">
+                    <span class="corn"></span>
+                    <span class="con">
+                        <b>百万用户口碑</b>
+                    </span>帮你只选对的,不选贵的
+                </a>
+                <a href="###" class="foot_link packaging" rel="nofollow">
+                    <span class="corn"></span>
+                    <span class="con">
+                        <b>订单闪电发货</b>
+                    </span>1.5小时订单急速出库
+                </a>
+                <a href="###" class="foot_link confide" rel="nofollow">
+                    <span class="corn"></span>
+                    <span class="con">
+                        <b>大牌明星热荐</b>
+                    </span>打造精致明星脸
+                </a>
+            </div>
+        </div>
+        <div class="footer_top_sen">
+            <div class="footer_con footer_links clearfix" id="footer_links">
+                <ul class="linksa clearfix">
+                    <li class="links">服务保障</li>
+                    <li><a href="###" rel="nofollow">品牌真品防伪码</a></li>
+                    <li><a href="###" rel="nofollow">正品保证</a></li>
+                    <li><a href="###" rel="nofollow">30天无条件退货</a></li>
+                    <li><a href="###">专属客服服务</a></li>
+                    <li><span class="footer_zcemail">总裁邮箱ceo@jumei.com</span></li>
+                </ul>
+                <ul class="linksb">
+                    <li class="links">使用帮助</li>
+                    <li><a href="###" rel="nofollow">新手指南</a></li>
+                    <li><a href="###" rel="nofollow">常见问题</a></li>
+                    <li><a href="###" rel="nofollow">帮助中心</a></li>
+                    <li><a href="###" rel="nofollow">用户协议</a></li>
+                    <li><a href="###" rel="nofollow">公示制度</a></li>
+                </ul>
+                <ul class="linksc">
+                    <li class="links">支付方式</li>
+                    <li><a href="###" rel="nofollow">货到付款</a></li>
+                    <li><a href="###" rel="nofollow">在线支付</a></li>
+                    <li><a href="###" rel="nofollow">余额支付</a></li>
+                    <li><a href="###" rel="nofollow">现金券支付</a></li>
+                </ul>
+
+                <ul class="linksd">
+                    <li class="links">配送方式</li>
+                    <li><a href="###" rel="nofollow">包邮政策</a></li>
+                    <li><a href="###" rel="nofollow">配送说明</a></li>
+                    <li><a href="###" rel="nofollow">运费说明</a></li>
+                    <li><a href="###" rel="nofollow">验货签收</a></li>
+                </ul>
+
+                <ul class="linkse">
+                    <li class="links">售后服务</li>
+                    <li><a href="###" rel="nofollow">正品承诺</a></li>
+                    <li><a href="###" target="_blank" rel="nofollow">售后咨询</a></li>
+                    <li><a href="###" target="_blank" rel="nofollow">退货政策</a></li>
+                    <li><a href="###" target="_blank" rel="nofollow">退货办理</a></li>
+                </ul>
+                <div class="links_er_box">
+                    <ul class="linksf">
+                        <li class="links">手机聚美</li>
+                        <li><span class="link_bottom_pic"></span></li>
+                        <li>下载移动客户端</li>
+                    </ul>
+                    <ul class="linksg">
+                        <li class="links">聚美微信</li>
+                        <li><span class="link_bottom_pic"></span></li>
+                        <li>聚美官方微信</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer_dy" id="footer_dy">
+
+        </div>
+        <div class="footer_center">
+            <div class="footer_con" id="footer_link">
+                <a href="###" rel="nofollow">关于聚美优品</a>
+                <a href="###" rel="nofollow">INVESTOR RELATIONS</a>
+                <a href="###" rel="nofollow">合作招商</a>
+                <a href="###" rel="nofollow">获取更新</a>
+                <a href="###" rel="nofollow">加入聚美</a>
+                <a href="###" rel="nofollow">品牌合作专区</a>
+                <a href="###" rel="nofollow">网站联盟</a>
+                <a href="###" rel="nofollow">媒体报道</a>
+                <a href="###" rel="nofollow">商务合作</a>
+            </div>
+        </div>
+        <div id="footer_copyright" class="footer_copyright">
+            <div class="footer_con">
+                <p class="footer_copy_con">
+                    COPYRIGHT © 2010-2018 北京创锐文化传媒有限公司 JUMEI.COM 保留一切权利。
+                    客服热线：400-123-8888
+                    <br>
+                    京公网安备 11010102001226 | <a href="###" rel="nofollow">京ICP证111033号</a>
+                    | <a href="###">食品经营许可证</a>
+                    | <a href="###" rel="nofollow">营业执照</a> | <a href="###" rel="nofollow">ICP许可证</a> | <a href="###"
+                        rel="nofollow">出版物经营许可证</a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" class="footer_copy_logo logo01" rel="nofollow"></a>
+                    <a href="###" class="footer_copy_logo logo02" rel="nofollow"></a>
+                    <a href="javascript:void(0)" class="footer_copy_logo logo03" rel="nofollow"></a>
+                    <a href="javascript:void(0)" class="footer_copy_logo logo04" rel="nofollow"></a>
+                    <a href="###" class="footer_copy_logo logo05" rel="nofollow"></a>
+                    <a href="###r" class="footer_logo6" rel="nofollow"></a>
+                </p>
+
+            </div>
+        </div>
+    </footer>
+    <script>
+        //今日上新单品
+            var key = true;
+            var num = 0;
+            var len = 0;
+            //懒加载数据
+            $(document).scroll(function (event) {
+                var event = event || window.event;
+
+                var sH = document.documentElement.scrollHeight;
+
+                var sT = document.documentElement.scrollTop;
+
+                var cH = document.documentElement.clientHeight;
+
+                var top = $('#today_new_ul').offset().top - $(window).scrollTop();
+                //滑到底部加载
+                if (key && (top < 300)) {
+                    //保证一次加载完再进行下一次加载
+                    key = false;
+                    var timer = setTimeout(() => {
+
+                        $.ajax({
+                            url: "api/todaylist.php",
+                            type: "post",
+                            data: {
+                                "qty": 3,
+                                "num": num
+                            },
+                            success: function (str) {
+                                //console.log(num);
+                                //console.log(str);
+                                var arr = JSON.parse(str);
+                                //console.log(arr);
+                                len = arr.len; // 数据总长度
+                                if (num * 3 > len) {
+                                    clearTimeout(timer);
+                                    $(".today_loading").css({ "display": "none" });
+                                }
+
+                                var html = arr.list.map(function (item) {
+                                    //海外的没有销量 倒计时
+                                    if (item.overseas == "true") {
+                                        return `<li class="newdeal_box" overseas=${item.overseas} data-id=${item.goodid}>
+                                            <div class="img_box">
+                                                <a class="img_box_href"href="###">
+                                                    <img alt="${item.imgalt}" src="images/${item.img}" class="img_400 all_cart_img">
+                                                    <div class="commit_new" style="display: none;">
+                                                        <div class="commit_new_box">${item.commitnew}</div>
+                                                    </div>
+                                                </a>
+                                                <div class="deals_tags">
+                                                    <span class="tags_list tags_haitao"></span>
+                                                </div>
+                                                <div class="add_cart_box all_cart_wrap" style="display: none;">
+                                                    <a href="javascript:;" class="add_cart all_cart">加入购物车</a>
+                                                </div>
+                                            </div>
+                                            <a href="###">
+                                                <div class="today_new_detail">
+                                                    <p class="title">${item.title}</p>
+                                                    <div class="intro_box clearfix">
+                                                        <div class="price_box clearfix">
+                                                            <em>¥</em>
+                                                            <span class="pnum">${item.nowpric}</span>
+                                                            <div class="price_icon_wrap">
+                                                                <div class="icon_p">
+                                                                    <span class="y_icon">${item.baoyou}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="price_icon_wrap clearfix">
+                                                                <div class="icon_p">
+                                                                    <span class="y_icon">${item.baoyou}</span>
+                                                                </div>
+                                                                <span class="mnum">${item.passpric}</span>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>`;
+                                    }
+                                    //带防伪码
+                                    if (item.securityCode == "yes") {
+                                        return `<li class="newdeal_box"data-id=${item.goodid} overseas=${item.overseas}>
+                                            <div class="img_box">
+                                                <a class="img_box_href"href="###">
+                                                    <img alt="${item.imgalt}" src="images/${item.img}" class="img_400 all_cart_img">
+                                                    <div class="commit_new" style="display: none;">
+                                                        <div class="commit_new_box clearfix">
+                                                            <b class="link">
+                                                                <span class="num">48303</span> 条评论
+                                                            </b>
+                                                            <div class="service_rating small clearfix">
+                                                                <span class="rating_num">4.9/5</span>
+                                                                <div class="rating">
+                                                                    <div style="width:98.00000000000001%" class="value"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <div class="deals_tags">
+                                                    <span class="tags_list tags_fangwei"></span>
+                                                </div>
+                                                <div class="add_cart_box all_cart_wrap" style="display: none;">
+                                                    <a href="javascript:;" class="add_cart all_cart">加入购物车</a>
+                                                </div>
+                                            </div>
+                                            <a href="###">
+                                                <div class="today_new_detail">
+                                                    <p class="title">${item.title}</p>
+                                                    <div class="intro_box clearfix">
+                                                        <div class="price_box clearfix">
+                                                            <em>¥</em>
+                                                            <span class="pnum">${item.nowpric}</span>
+                                                            <div class="price_icon_wrap">
+                                                                <div class="icon_p">
+                                                                    <span class="y_icon">${item.baoyou}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="price_icon_wrap clearfix">
+                                                                <div class="icon_p">
+                                                                    <span class="y_icon">${item.baoyou}</span>
+                                                                </div>
+                                                                <span class="mnum">${item.passpric}</span>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>`;
+                                    }
+                                    //新品
+                                    return `<li class="newdeal_box" overseas=${item.overseas}  data-id=${item.goodid}>
+                                        <div class="img_box">
+                                            <a class="img_box_href"href="###">
+                                            <img alt="${item.imgalt}" src="images/${item.img}" class="img_400 all_cart_img">
+                                                <div class="commit_new" style="display: none;">
+                                                    <div class="commit_new_box">${item.commitnew}</div>
+                                                </div>
+                                            </a>
+                                            <div class="deals_tags">
+                                                <span class="tags_list tags_xinpin"></span>
+                                            </div>
+                                            <div class="add_cart_box all_cart_wrap" style="display: none;">
+                                                <a href="javascript:;" class="add_cart all_cart">加入购物车</a>
+                                            </div>
+                                        </div>
+                                        <a href="###">
+                                            <div class="today_new_detail">
+                                                <p class="title">${item.title}</p>
+                                                <div class="intro_box clearfix">
+                                                    <div class="price_box clearfix">
+                                                        <em>¥</em>
+                                                        <span class="pnum">${item.nowpric}</span>
+                                                        <div class="price_icon_wrap">
+                                                            <div class="icon_p">
+                                                                <span class="y_icon">${item.baoyou}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="price_icon_wrap clearfix">
+                                                            <div class="icon_p">
+                                                                <span class="y_icon">${item.baoyou}</span>
+                                                            </div>
+                                                            <span class="mnum">${item.passpric}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="numtimer_box clearfix">
+                                                        <div class="time_box">
+                                                            <em>00</em>天
+                                                            <em>14</em>时
+                                                            <em>03</em>分
+                                                            <em>52</em>秒
+                                                        </div>
+                                                        <div class="num_box">销量: <span class="buy_num">${item.liker}</span> |</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>`;
+                                }).join("");
+
+                                $("#today_new_ul").html($("#today_new_ul").html() + html);
+                                $(".today_loading").css({ "display": "none" });
+                                key = true;
+                                num++;
+                            }
+                        });
+                    }, 1000);
+                    if (num * 3 > len) {
+                        clearTimeout(timer);
+                        $(".today_loading").css({ "display": "none" });
+                    } else {
+                        $(".today_loading").css({ "display": "block" });
+                    }
+
+
+                }
+
+            });
+            //楼层跳跃
+                $(document).scroll(function () {
+                    //console.log($(window).scrollTop());
+                    var top = $('#today_later_tab').offset().top - $(window).scrollTop();
+                    var top2 = $('#today_deals').offset().top - $(window).scrollTop();
+                    var top3 = $('.brands').offset().top - $(window).scrollTop();
+                    //console.log(top2)
+                    if (top < 70) {
+
+
+                        $("#home_nav_bar").stop().animate({
+                            "opacity": 1
+
+                        }, 500, "linear");
+
+                        $(".nav_mustsee").find("a").css({ "backgroundPosition": "-177px 0" });
+                        $(".nav_today_deals").find("a").css({ "backgroundPosition": "0 -125px" });
+
+                        if (top2 <= 10) {
+                            //console.log(1)
+                            $(".nav_mustsee").find("a").css({ "backgroundPosition": "0 0" });
+                            $(".nav_today_deals").find("a").css({ "backgroundPosition": "-177px -125px" });
+                        }
+
+                    } else {
+                        $(".nav_mustsee").find("a").css({ "backgroundPosition": "-177px 0" });
+                        $(".nav_today_deals").find("a").css({ "backgroundPosition": "0 -125px" });
+
+                        $("#home_nav_bar").stop().animate({
+                            "opacity": 0
+                        }, 500, "linear");
+                    }
+
+                    if (top3 <= 0) {
+                        $(".nav_mustsee").find("a").css({ "backgroundPosition": "0 0" });
+                        $(".nav_today_deals").find("a").css({ "backgroundPosition": "0 -125px" });
+                    }
+
+                    //出现返回顶部
+                    if ($(window).scrollTop() > 400) {
+                        $("#gotop").css("display", "block");
+                    } else {
+                        $("#gotop").css("display", "none");
+                    }
+                });
+    </script>
+
+</body>
+
+</html>

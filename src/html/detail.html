@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/detail.css">
+    <script src="../lib/jquery2.0.3.js"></script>
+    <script src="../lib/jquery.cookie.js"></script>
+    <script src="../js/detail.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header_container">
+        <div class="header_top">
+            <div class="header_wrapper clearfix">
+                <ul class="fl header_left clearfix">
+                    <li>
+                        <a href="###">
+                            <img src="../images/smalllogo.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">限时特卖</a>
+                    </li>
+                    <li>
+                        <a href="###">美妆商城</a>
+                    </li>
+                    <li>
+                        <a href="###">极速免税店</a>
+                    </li>
+                    <li>
+                        <a href="###">手机聚美</a>
+                    </li>
+                    <li class="h_more_width">
+                        <a href="###">正品保证<span class="h_arrow"></span></a>
+                        <div class="menu_list" style="display: none;">
+                            <a href="###">真品联盟</a>
+                            <a href="###">正品鉴定</a>
+                            <a href="###">常见问题</a>
+                            <a href="###">退货政策</a>
+                            <a href="###">帮助中心</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="fr header_right clearfix">
+                    <li class="denglu"><a href="###">登录</a></li>
+                    <li class="zhuce"><a href="###">注册</a></li>
+                    <li><a href="###">订单查询</a></li>
+                    <li class="jumei">
+                        <a href="###">我的聚美<i class="h_arrow"></i></a>
+                        <div class="h_arrow_menu h_arrow_loc">
+                            <span class="arrow_a"><span class="arrow_b"></span></span>
+                            <div class="a_menu_list">
+                                <a href="###">我的订单</a>
+                                <a href="###">我的现金券</a>
+                                <a href="###">我的红包</a>
+                                <a href="###">我的余额</a>
+                                <a href="###">我的提现退款</a>
+                                <a href="###">我的收藏</a>
+                                <a href="###">我的心愿单</a>
+                                <a href="###">会员中心</a>
+                                <a href="###">礼品卡兑换</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="more">
+                        <a href="###">更多<i class="h_arrow"></i></a>
+                        <div class="h_arrow_menu ">
+                            <span class="arrow_a"><span class="arrow_b"></span></span>
+                            <div class="a_menu_list">
+                                <a href="###" rel="nofollow">邀请好友</a>
+                                <a href="javascript:void(0)" rel="nofollow" id="bookmark_us" class="bom-line"><span
+                                        class="bottomline">加入收藏</span></a>
+                                <a href="###" class="a_menu_span">新浪微博<span><img src=""></span></a>
+                                <a href="javascript:void(0)" class="a_menu_span">聚美微信<span><img src=""></span></a>
+                                <a href="###" class="a_menu_span">腾讯微博<span><img src=""></span></a>
+                                <a href="###" class="a_menu_span">人人公众主页<span><img src=""></span></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header_wrapper clearfix">
+            <a href="../index.html" class="global_logo fl" title="飞一般的免税店体验"></a>
+            <div class="head_certif clearfix">
+                <div class="cart_flag_all" id="cart_box">
+                    <a href="###" rel="nofollow" class="cart_box cart_box_hover">
+                        <span class="cart_logtext">去购物车结算</span>
+                        <span class="nav_cart_num" style="display: none;"></span>
+                        <div class="cart_content" style="display: none;">
+                            <div class="cart_content_zero">购物车中还没有商品，<br>快去挑选心爱的商品吧！</div>
+                            <div class="cart_content_all" style="display: none;">
+                                <div class="cart_left_time"><span class="cart_diff"></span>后购物袋被清空,请及时结算</div>
+                                <div class="cart_content_center"></div>
+                                <div class="con_all">
+                                    <div class="price_whole"><span>共<span class="num_all">0</span>件商品</span><span class="price_gongji"><em>¥</em><span
+                                                class="total_price f_color">0</span></span></div>
+                                    <div><a href="###" class="cart_btn">去购物车结算</a></div>
+                                </div>
+                            </div><span class="recent_deals_strangle"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="detail">
+        <div class="detail_wrap">
+            <div class="detail_main clearfix">
+                <div class="detail_left" id="detail_left">
+                    <!-- <div class="detail_title">
+                        <p class="title">一生中没有用过一次【神仙水】就不够完整！SK-II 护肤精华露
+                            230ml，给你一次肌肤蜕变的机会！内含丰富的pitera成分，是使肌肤保持细嫩的秘诀。经过调查表明，神仙水的回购率达90%以上，百万女性因为用她找回了细嫩的皮肤！</p>
+                    </div>
+                    <div class="product_pic">
+                        <div class="numtimer_box time">
+                            <span class="tips">距特卖结束</span>
+                            <span class="recom_time_box time_box">
+                                <span class="timer_d_sapn">
+                                    0<em>天</em>
+                                </span>
+                                <span class="timer_info_sapn">14<em>:</em>24<em>:</em>00</span></span>
+                        </div>
+                        <div class="preview_product_id">
+                            <img src="../images/today07.jpg">
+                        </div>
+                    </div>
+                    <div class="product_info clearfix">
+                        <div class="product_info_list fl">
+                            <a href="###">均匀肤色</a>
+                            <a href="###">美白</a>
+                            <a href="###">抗衰老</a>
+                            <a href="###">舒缓</a>
+                            <a href="###">柔肤</a>
+                            <a href="###">淡化黑色素</a>
+                        </div>
+                        <div class="jiathis_style fr">
+                            <a href="###">分享到 &gt;</a>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="detail_right" id="detail_right">
+                    <!-- <div class="r_first clearfix">
+                        <a href="###" rel="nofollow" class="">
+                            <img src="../images/today03brand.jpg" class="logo_brand" alt="logo_brand"></a>
+                        <div class="flag_box_main clearfix fr">
+                            <img src="../images/Japan.jpg" class="p_img_lg fl" alt="flag">
+                            <ul class="fl">
+                                <li>日本</li>
+                                <li>Japan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="r_second">
+                        <ul class="price_module clearfix">
+                            <li class="jumei_price"><em class="jp_cur">¥</em>1029</li>
+                            <li class="market_price" style="display: list-item;"><em>¥</em>1450</li>
+                            <li class="sh_mark" style="display: list-item;">
+                                <span class="rmb_tax" id="rmb_tax">价格详情 &gt;</span>
+                                <div class="mark_layer" style="display: none;">
+                                    <b class="caret_out"></b>
+                                    <b class="caret_in"></b>
+                                    <div class="mark_hover" style="width: 315px;">
+                                        <p class="details">价格详情:</p>
+                                        <div class="price_detail">
+                                            <p class="deal_price">货价925.36+税价103.64 （增值税、消费税）</p>
+                                            <div class="tax_content"><span>1.财政部，海关总署，国家税务总局发布跨境电子商务零售进口税收政策，自2016年4月8日起，跨境电商单次交易限值为人民币2000元，个人年度交易限值为人民币20000元。</span><br><span>2.跨境电商综合税需按一般贸易增值税及消费税税额的70%征收，税费以结算页金额为准。</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="people clearfix">
+                        <div class="num fl"><em>22</em>人已购买</div>
+                    </div>
+                    <div class="r_third">
+                       
+                        <dl class="mail_policy clearfix">
+                            <dt class="fl">包邮政策：</dt>
+                            <dd>
+                                本商品满299元或2件包邮
+                                （新疆部分区域除外）
+                            </dd>
+                        </dl>
+                       
+                        <dl class="mail_policy clearfix">
+                            <dt class="fl">服务政策：</dt>
+                            <dd>
+                                <a href="###">本商品不支持退货</a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="r_fourth">
+                        <a href="javascript:;" class="detail_btn" id="shop_cart">
+                            <span>加入购物车</span>
+                            <i></i>
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="deal_prefer  clearfix" id="deal_prefer">
+
+                <div class="list rightborder">
+                    <div class="item" style="top: 0px;">
+                        <div class="item_show item_show_0"></div>
+                        <div class="item_desp item_desp_0"><a href="##" class="more"></a></div>
+                    </div>
+                </div>
+                <div class="list rightborder">
+                    <div class="item" style="top: 0px;">
+                        <div class="item_show item_show_1"></div>
+                        <div class="item_desp item_desp_1"><a href="###" class="more"></a></div>
+                    </div>
+                </div>
+                <div class="list rightborder">
+                    <div class="item" style="top: 0px;">
+                        <div class="item_show item_show_2"></div>
+                        <div class="item_desp item_desp_2"><a href="###" class="more"></a></div>
+                    </div>
+                </div>
+                <div class="list last">
+                    <div class="item" style="top: 0px;">
+                        <div class="item_show item_show_3"></div>
+                        <div class="item_desp item_desp_3"><a href="###" class="more"></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="deal_detail">
+                <!-- <div class="deal_tab_nav" id="anchorbar">
+                    <div class="inner clearfix">
+                        <ul class="clearfix fl">
+                            <li><a href="#spxx">商品信息</a></li>
+                            <li><a href="#spxq">商品详情</a></li>
+
+                            <li><a href="#syff">使用方法</a></li>
+
+                            <li><a href="#spsp">商品实拍</a></li>
+
+                            <li><a href="#yhkb">用户口碑</a></li>
+                            <li><a href="#cjwt">关于极速免税店</a></li>
+                        </ul>
+                        <div class="fr clearfix price">
+                            <span class="nav_fprice fl">
+                                <strong class="">¥178</strong>
+                                <span class="">(<span class="market_price"><em class="">¥</em>455</span>)</span>
+                            </span>
+                            <span class="btn"><a href="javascript:;" id="anchorbarBuyBtn" class="fixed_buy_now">加入购物车</a></span>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="ptb_30">
+                    <div id="spxx" class="content_nav_con  content_book">
+                        <div class="detail_content guts_box"></div>
+                        <div class="content_text">
+                            <div class="deal_con_content">
+                                <table border="0" cellpadding="0" cellspacing="0" style="font-family:arial;">
+                                    <tbody>
+                                        <tr>
+                                            <td width="85" align="left"><b>商品名称：</b></td>
+                                            <td width="500"><span>AHCB5玻尿酸水乳套装120ml+120ml</span></td>
+                                            <td rowspan="7" style="padding-right:0;">
+                                                <img src="http://p1.global.jmstatic.com/product/003/365/3365132_std/3365132_200_200.jpg"
+                                                    class="w200">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="85" align="left"><b>商品型号：</b></td>
+                                            <td>
+                                                <span style="margin-right:10px;">120ml+120ml(702027514)；</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"><b>品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;牌：</b></td>
+                                            <td><span>AHC</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"><b>分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类：</b></td>
+                                            <td><span>护肤套装</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"><b>功&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;效：</b></td>
+                                            <td><span>保湿,补水</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"><b>产品容量：</b></td>
+                                            <td><span>120ml+120ml </span></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"><b>特别说明：</b></td>
+                                            <td><span>多款包装随机发货，介意者慎购！</span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td align="left"><b>注意事项：</b></td>
+                                            <td><span>因个人肤质不同，如有不适请立即停止使用。</span></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content_img">
+                            <img src="http://f0.jmstatic.com/btstatic/h5/htbsqPC.jpg" alt="gyhwg_img">
+                        </div>
+                    </div>
+                    <div id="spxq" class="content_nav_con" loaded="loaded">
+                        <div class="detail_content spxq_box"></div>
+                        <div class="content_text"><img src="http://p12.jmstatic.com/html_editor/201901/11/15471870483673.jpg"
+                                alt=""><img src="http://p12.jmstatic.com/html_editor/201901/11/15471870487602.jpg" alt=""><img
+                                src="http://p12.jmstatic.com/html_editor/201901/11/1547187049643.jpg" alt=""><img src="http://p12.jmstatic.com/html_editor/201901/11/15471870494100.jpg"
+                                alt=""><img src="http://p12.jmstatic.com/html_editor/201901/11/15471870497954.jpg" alt=""><img
+                                src="http://p12.jmstatic.com/html_editor/201901/11/15471870501431.jpg" alt=""><img src="http://p12.jmstatic.com/html_editor/201901/11/15471870504631.jpg"
+                                alt=""><img src="http://p12.jmstatic.com/html_editor/201901/11/15471870507895.jpg" alt=""><img
+                                src="http://p12.jmstatic.com/html_editor/201901/11/1547187051484.jpg" alt=""><img src="http://p12.jmstatic.com/html_editor/201901/11/15471870514409.jpg"
+                                alt=""></div>
+                    </div>
+                    <div id="syff" class="content_nav_con">
+                        <div class="detail_content syff_box"></div>
+                        <div class="content_text">
+                            <p>
+                                <p>
+                                    本产品适宜存放在阴凉，干燥处，请尽量避免阳光直射。
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div> -->
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

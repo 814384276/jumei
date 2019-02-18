@@ -1,0 +1,260 @@
+@charset "utf-8";
+body {
+    background: #fff;
+}
+#header_container {
+    min-width: 960px;
+    background: #fff;
+    #logo {
+        height: 85px;
+        width: 960px;
+        margin: 0 auto;
+        #home {
+            width: 360px;
+            height: 85px;
+            overflow: hidden;
+            float: left;
+            font-size: 0;
+            line-height: 0;
+        }
+        .header_logo_box {
+            display: inline-block;
+            padding-top: 35px;
+            float: right;
+        }
+        a.top_link {
+            width: 110px;
+            height: 31px;
+            overflow: hidden;
+            margin-right: 24px;
+            float: right;
+        }
+        a.top_link {
+            background: url("../images/header_corn_new_v2.png") no-repeat top center transparent;
+        }
+        a.gild {
+            background-image: url(../images/gild.png);
+            width: 170px;
+        }
+        a.lightning {
+            background-position: 0 -64px;
+        }
+         a.credit {
+            background-position: 0 0;
+        }
+    }
+}
+//zhuce
+.loginWrap {
+    margin-top: 120px;
+    margin-bottom: 70px;
+    height: 460px;
+    margin: 100px auto;
+    line-height: 1.5;
+    width: 965px;
+    .loginPic {
+        background: url(../images/signPic.jpg) no-repeat;
+        position: relative;
+        width: 960px;
+        height: 370px;
+        position: relative;
+        .signup_link {
+            display: block;
+            position: absolute;
+            width: 420px;
+            height: 370px;
+        }
+    }
+    .loginBord {
+        top: -80px;
+        box-shadow: 0 0 4px rgba(0,0,0,.075);
+        background: rgba(255,255,255,.85);
+        border: 1px solid #ededed;
+        position: absolute;
+        min-height: 400px;
+        padding: 0 23px;
+        width: 310px;
+        color: #333;
+        top: -60px;
+        right: 0;
+        .loginTit {
+            margin-bottom: 15px;
+            line-height: 60px;
+            .tosignup {
+                color: #969696;
+                float: right;
+                a {
+                    color: #ed145b;
+                }
+                
+            }
+            h1 {
+                font-weight: 400;
+                font-size: 20px;
+                color: #e31256;
+                strong {
+                    font-weight: bold;
+                }
+            }
+        }
+        .invalid {
+            width: 290px;
+            white-space: normal;
+            word-break: normal;
+            position: absolute;
+            line-height: 1.5;
+            margin-top: 4px;
+            left: 20px;
+            
+            i {
+                background-image: url(../images/sign.png);
+                background-repeat: no-repeat;
+                background-position: 0 -100px;
+                position: absolute;
+                left: -20px;
+                top: 7px;
+                margin-top: -10px;
+                height: 20px;
+                width: 20px;
+                z-index: 1;
+            }
+           
+        }
+    }
+    .line {
+        height: 44px;
+        margin: 0;
+        margin-bottom: 28px;
+        font-size: 12px;
+       
+        clear: both;
+        color: #333;
+        .textbox_ui {
+            position: relative;
+            input {
+                box-shadow: none;
+                border: 1px solid #CFCFCF;
+                background-color: #fff;
+                vertical-align: middle;
+                padding: 10px 8px;
+                line-height: 1.5;
+                font-size: 14px;
+                outline: 0;
+                height: auto;
+                width: 284px;
+            }
+            input:focus {
+                box-shadow: 0 0 4px 1px rgba(32,157,230,.4);
+                border-color: #A5D4ED;
+            }
+            .focus_text {
+                word-break: keep-all;
+                white-space: nowrap;
+                margin-top: 4px;
+                color: #999;
+                top: 100%;
+                left: 0;
+                display: none;
+            }
+            input:focus~.focus_text {
+                display: block;
+            }
+
+        }
+    }
+    .verityWrap  {
+        #mobile_verify {
+            width: 138px;
+        }
+        .textbox_ui {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        .phonecode {
+            // background: #fcfcfc;
+            // background: -webkit-gradient(linear,left top,left bottom,from(#fcfcfc),to(#f2f2f2));
+            // background: -webkit-linear-gradient(top,#fcfcfc,#f2f2f2);
+            // background: -moz-linear-gradient(top,#fcfcfc,#f2f2f2);
+            // background: -o-linear-gradient(top,#fcfcfc,#f2f2f2);
+            // background: linear-gradient(to bottom,#fcfcfc,#f2f2f2);
+            //border: 1px solid #d9d9d9;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 0 8px;
+            display: block;
+            line-height: 41px;
+            height: 41px;
+            font-weight: 700;
+            color: #666;
+            text-align: center;
+            width: 112px;
+        }
+    }
+    form p {
+        margin: 10px 0;
+    }
+    #submit_btn {
+        border: 1px solid #F9477A;
+        display: inline-block;
+        font-family: inherit;
+        word-break: keep-all;
+        background: #F8296D;
+        white-space: nowrap;
+        font-weight: 400;
+        text-align: center;
+        line-height: 40px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        //padding: 0 30px;
+        width: 303px;
+        height: 40px;
+        color: #fff;
+        border: 0;
+    }
+}
+//底部
+.footer_white {
+    overflow: hidden;
+    position: relative;
+    bottom: -1px;
+    .footer_con {
+        background: #fff;
+        color: #000;
+        text-align: center;
+        padding-bottom: 80px;
+        .footer_copy_con {
+            padding: 14px 0 18px;
+            line-height: 23px;
+            a {
+                color: #000;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+        .footer_copy_logo {
+            width: 126px;
+            height: 50px;
+            overflow: hidden;
+            display: inline-block;
+            margin-right: 8px;
+            background: url(../images/footer_btm_icon.png) no-repeat;
+            border-bottom: 1px solid #d7d7d7;
+            margin: 0 4px;
+        }
+        .logo02 {
+            background-position: -126px 0;
+        }
+        .logo03 {
+            background-position: -252px 0;
+        }
+        .logo04 {
+            background-position: -378px 0;
+        }
+        .logo05 {
+            background-position: -504px 0;
+        }
+    }
+}
+

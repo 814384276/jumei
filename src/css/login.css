@@ -1,0 +1,96 @@
+.loginWrap {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 960px;
+  position: relative;
+}
+.loginWrap .loginImage {
+  background: url(../images/loginPic.jpg) no-repeat;
+  width: 960px;
+  height: 360px;
+  position: absolute;
+}
+.loginWrap .loginBord {
+  width: 346px;
+  top: -10px;
+}
+.loginWrap .textbox_ui {
+  margin-bottom: 26px;
+  position: relative;
+  height: 44px;
+}
+.loginWrap .textbox_ui input {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #CFCFCF;
+  background-color: #fff;
+  vertical-align: middle;
+  padding: 10px 8px;
+  line-height: 1.5;
+  font-size: 14px;
+  outline: 0;
+  height: auto;
+  width: 300px;
+  background-image: url(../images/sign.png);
+  background-repeat: no-repeat;
+  background-position: 5px 0;
+}
+.loginWrap .textbox_ui input:focus {
+  box-shadow: 0 0 4px 1px rgba(32, 157, 230, 0.4);
+  border-color: #A5D4ED;
+  background-position: 5px 0;
+}
+.loginWrap .textbox_ui input:focus ~ .focus_text {
+  display: block;
+}
+.loginWrap .textbox_ui .focus_text {
+  word-break: keep-all;
+  white-space: nowrap;
+  margin-top: 4px;
+  color: #999;
+  top: 100%;
+  left: 0;
+  position: absolute;
+  line-height: 1.5;
+  display: none;
+}
+.loginWrap .pass input {
+  background-position: 5px -50px;
+}
+.loginWrap .pass input:focus {
+  background-position: 5px -50px;
+}
+.loginWrap .error_ui input {
+  -webkit-box-shadow: 0 0 4px 1px rgba(228, 36, 36, 0.6);
+  box-shadow: 0 0 4px 1px rgba(228, 36, 36, 0.6);
+  border-color: #E24A4A;
+  display: block;
+}
+.loginWrap input {
+  vertical-align: middle;
+}
+
+#username, #login_password {
+  padding-left: 38px;
+}
+
+#login {
+  font-family: inherit;
+  word-break: keep-all;
+  background: #F8296D;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 30px;
+  height: 40px;
+  color: #fff;
+  border: 0;
+  margin-bottom: 0px;
+  outline: 0;
+  margin-top: 25px;
+}
+
+/*# sourceMappingURL=login.css.map */

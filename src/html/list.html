@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表页</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/list.css">
+    <style>
+        .u-flyer {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            position: fixed;
+            z-index: 9999;
+        }
+    </style>
+    <script src="../lib/jquery2.0.3.js" charset="UTF-8"></script>
+    <script src="../lib/fly.js"></script>
+    <script src="../lib/jquery.cookie.js"></script>
+    <!-- <script src="../js/index.js" charset="UTF-8"></script> -->
+    <script src="../js/list.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="header_top">
+            <div class="header_top_box clearfix">
+                <ul class="header_top_left fl">
+                    <li>欢迎来到聚美！</li>
+                    <li><a href="login.html">请登录</a></li>
+                    <li><a href="register.html">快速注册</a></li>
+                </ul>
+                <ul class="header_top_right fr">
+                    <li><a href="###">正品保证</a></li>
+                    <li><a href="###">订单查询</a></li>
+                    <li><a href="###"><span class="icon_favorite"></span>收藏的品牌</a></li>
+                    <li class="item_jumei">
+                        <a href="###">我的聚美<span class="icon_arrow_down"></span></a>
+                        <div class="sub_nav">
+                            <ul>
+                                <li><a href="###">我的订单</a></li>
+                                <li><a href="###">我的现金券</a></li>
+                                <li><a href="###">我的红包</a></li>
+                                <li><a href="###">我的余额</a></li>
+                                <li><a href="###">我的心愿单</a></li>
+                                <li><a href="###">我的提现退款</a></li>
+                                <li><a href="###">我的收藏</a></li>
+                                <li><a href="###">会员中心</a></li>
+                                <li><a href="###">礼品卡兑换</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item_mobile">
+                        <a href="###">
+                            <span class="line"></span>
+                            <span class="icon_mobile"></span>
+                            手机聚美
+                        </a>
+                    </li>
+                    <li>
+                        <span class="line"></span>
+                    </li>
+                    <li class="item_more">
+
+                        <a href="###">更多<span class="icon_arrow_down"></span></a>
+                        <div class="sub_nav">
+                            <ul>
+                                <li><a href="###">邀请好友</a></li>
+                                <li><a href="###">加入收藏</a></li>
+                                <li><a href="###">新浪微博</a></li>
+                                <li><a href="###">聚美微信</a></li>
+                                <li><a href="###">百度贴吧</a></li>
+                                <li><a href="###">腾讯微博</a></li>
+                                <li><a href="###">人人公众主页</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header_center clearfix">
+            <h1 class="logo fl">
+                <a href="../index.html">聚美优品</a>
+            </h1>
+            <div class="header_searchbox fl">
+                <form class="clearfix">
+                    <input type="text" class="header_search_input">
+                    <input type="button" class="header_search_btn" value="搜索">
+                </form>
+                <div class="search_result">
+                    <div><span>补水</span><label for="">约2730件</label></div>
+                    <div><span>洁面</span><label for="">约230件</label></div>
+                    <div><span>面膜</span><label for="">约885件</label></div>
+                    <div><span>眼霜</span><label for="">约2730件</label></div>
+                    <div><span>爽肤水</span><label for="">约893件</label></div>
+                    <div><span>口红</span><label for="">约475件</label></div>
+                    <div><span>粉饼</span><label for="">约2730件</label></div>
+                    <div><span>卸妆</span><label for="">约304件</label></div>
+                    <div><span>隔离</span><label for="">约191件</label></div>
+                </div>
+                <ul class="hot_word">
+                    <li><a href="###">保湿</a></li>
+                    <li><a href="###">面膜</a></li>
+                    <li><a href="###">洗面奶</a></li>
+                    <li><a href="###">补水</a></li>
+                    <li><a href="###">香水</a></li>
+                    <li><a href="###">眼霜</a></li>
+                    <li><a href="###">口红</a></li>
+                    <li><a href="###">护肤套装</a></li>
+                    <li><a href="###">BB霜</a></li>
+                </ul>
+            </div>
+            <div class="cart_box fr" id="cart_box">
+                <a href="#" class="clearfix">
+                    <img src="../images/cart.gif" alt="购物车" class="cart_gif">
+                    <span class="text">去购物车结算</span>
+                    <span class="icon_arrow_right"></span>
+                </a>
+                <div class="cart_content" id="cart_content"></div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div class="nav_box clearfix">
+                <nav class="nav_list fl">
+                    <li class="current"><a href="###" class="home">首页</a></li>
+                    <li><a href="###">极速免税店</a></li>
+                    <li><a href="###">母婴特卖</a></li>
+                    <li>
+                        <a href="###">美妆商城<span></span></a>
+                        <div class="nav_content clearfix" id="nav_content">
+                            <div class="imglist fl">
+                                <a href="###"><img src="../images/nav_01.jpg" alt=""></a>
+                                <a href="###"><img src="../images/nav_02.jpg" alt=""></a>
+                            </div>
+                            <div class="nav_inner fl clearfix">
+                                <dl style="border-left: none">
+                                    <dt>
+                                        <a href="###">国际大牌</a>
+                                    </dt>
+                                    <dd><a href="###">兰蔻</a></dd>
+                                    <dd><a href="###">娇韵诗</a></dd>
+                                    <dd><a href="###">伊丽莎白雅顿</a></dd>
+                                    <dd><a href="###">雅诗兰黛</a></dd>
+                                    <dd><a href="###">欧莱雅</a></dd>
+                                    <dd><a href="###">兰芝</a></dd>
+                                    <dd><a href="###">倩碧</a></dd>
+                                    <dd><a href="###">雅漾</a></dd>
+                                    <dd><a href="###">菲诗小铺</a></dd>
+                                    <dd><a href="###">悦诗风吟</a></dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <a href="###">护肤</a>
+                                    </dt>
+                                    <dd><a href="###">洁面</a></dd>
+                                    <dd><a href="###">爽肤水</a></dd>
+                                    <dd><a href="###">精华</a></dd>
+                                    <dd><a href="###">乳液</a></dd>
+                                    <dd><a href="###">面霜</a></dd>
+                                    <dd><a href="###">眼霜</a></dd>
+                                    <dd><a href="###">面膜</a></dd>
+                                    <dd><a href="###">护肤套装</a></dd>
+
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <a href="###">彩妆</a>
+                                    </dt>
+                                    <dd><a href="###">卸妆</a></dd>
+                                    <dd><a href="###">BB霜</a></dd>
+                                    <dd><a href="###">粉底液</a></dd>
+                                    <dd><a href="###">粉饼</a></dd>
+                                    <dd><a href="###">眼影</a></dd>
+                                    <dd><a href="###">眼线笔</a></dd>
+                                    <dd><a href="###">睫毛膏</a></dd>
+                                    <dd><a href="###">眉笔</a></dd>
+                                    <dd><a href="###">口红</a></dd>
+                                    <dd><a href="###">腮红</a></dd>
+                                </dl>
+                                <dl style="border-left: none; border-bottom:none">
+                                    <dt>
+                                        <a href="###">香氛</a>
+                                    </dt>
+                                    <dd><a href="###">女士香水</a></dd>
+                                    <dd><a href="###">男士香水</a></dd>
+                                    <dd><a href="###">中性香水</a></dd>
+                                    <dd><a href="###">Q版香水</a></dd>
+                                    <dd><a href="###">香水套装</a></dd>
+                                    <dd><a href="###">精油</a></dd>
+                                </dl>
+                                <dl style="border-bottom:none">
+                                    <dt>
+                                        <a href="###">男士专区</a>
+                                    </dt>
+                                    <dd><a href="###">洁面</a></dd>
+                                    <dd><a href="###">爽肤水</a></dd>
+                                    <dd><a href="###">面霜</a></dd>
+                                    <dd><a href="###">精华</a></dd>
+                                    <dd><a href="###">护肤套装</a></dd>
+                                    <dd><a href="###">洗发</a></dd>
+                                    <dd><a href="###">沐浴</a></dd>
+                                </dl>
+                                <dl style="border-bottom:none">
+                                    <dt>
+                                        <a href="###">热门搜索</a>
+                                    </dt>
+                                    <dd><a href="###">面膜贴</a></dd>
+                                    <dd><a href="###">洗面奶</a></dd>
+                                    <dd><a href="###">唇膏</a></dd>
+                                    <dd><a href="###">去黑头</a></dd>
+                                    <dd><a href="###">祛斑</a></dd>
+                                    <dd><a href="###">隔离</a></dd>
+                                    <dd><a href="###">去角质</a></dd>
+                                    <dd><a href="###">指甲油</a></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="###">国际轻奢</a></li>
+                    <li><a href="###">服装运动</a></li>
+                    <li><a href="###">鞋包配饰</a></li>
+                </nav>
+                <ul class="nav_icon fr clearfix">
+                    <li><a href="###"><img src="../images/z_01new.jpg" alt=""></a></li>
+                    <li><a href="###"><img src="../images/z02.jpg" alt=""></a></li>
+                    <li><a href="###"><img src="../images/z03.jpg" alt=""></a></li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- 列表页 -->
+    <div class="list">
+        <div class="list_header">
+            <div class="search_crumb clearfix" style="width:1090px">
+                <ul class="clearfix fl bread_ul">
+                    <li class="bread_first_item">
+                        <a href="##">化妆品首页</a>
+                    </li>
+                    <li><span>&gt;</span></li>
+                    <li><span><a href="###">面部护肤</a></span></li>
+                    <li><span>&gt;</span></li>
+                </ul>
+                <div class="selected_panel">
+                    <p id="bread_panel_keywords">
+                        <a href="##">精华</a>
+                    </p>
+                </div>
+                <!----右侧搜索框 start ---->
+                <div class="right_search">
+                    <form>
+                        <span class="search_gt_1">&gt;</span>
+                        <input type="text" class="bread_search_input" name="search" id="" value="精华">
+                        <input type="submit" value="" class="bread_search_img" id="">
+                    </form>
+                </div>
+                <!----右侧搜索框 end---->
+            </div>
+        </div>
+        <div class="list_container">
+            <div class="list_content">
+                <div class="search_filter_title">
+                    <div class="search_filter_top">
+                        <strong>在<span>精华</span>中筛选 <label>（多选模式，每个属性最多可同时选5个选项）</label></strong>
+                    </div>
+                </div>
+                <div class="search_filter">
+                    <div class="filter_con">
+                        <div class="filter_tit">品牌:</div>
+                        <div class="filter_attrs" id="filter_brand">
+                            <ul>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                                <li rel="B" title="芭乐雅"><a href="##">芭乐雅</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filter_con">
+                        <div class="filter_tit">功效:</div>
+                        <div class="filter_attrs" id="filter_brand">
+                            <ul>
+                                <li rel="B" title="滋润"><a href="##">滋润</a></li>
+                                <li rel="B" title="保湿"><a href="##">保湿</a></li>
+                                <li rel="B" title="补水"><a href="##">补水</a></li>
+                                <li rel="B" title="收敛毛孔"><a href="##">收敛毛孔</a></li>
+                                <li rel="B" title="嫩肤"><a href="##">嫩肤</a></li>
+                                <li rel="B" title="抗衰老"><a href="##">抗衰老</a></li>
+                                <li rel="B" title="修复肌肤"><a href="##">修复肌肤</a></li>
+                                <li rel="B" title="紧致"><a href="##">紧致</a></li>
+                                <li rel="B" title="修复肌肤"><a href="##">修复肌肤</a></li>
+                                <li rel="B" title="控油"><a href="##">控油</a></li>
+                                <li rel="B" title="美白"><a href="##">美白</a></li>
+                                <li rel="B" title="祛痘"><a href="##">祛痘</a></li>
+                                <li rel="B" title="抗皱"><a href="##">抗皱</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filter_con">
+                        <div class="filter_tit">价格:</div>
+                        <div class="filter_attrs" id="filter_brand">
+                            <ul>
+                                <li rel="B" title="0-229"><a href="##">0-229元</a></li>
+                                <li rel="B" title="230-539"><a href="##">230-539元</a></li>
+                                <li rel="B" title="540-1199元"><a href="##">540-1199元</a></li>
+                                <li rel="B" title="1200-1999元"><a href="##">1200-1999元</a></li>
+                                <li rel="B" title="2000元"><a href="##">2000元</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="search_list_wrap">
+                    <div class="search_list_head_fiex">
+                        <div class="search_list_head clearfix" style="position: static; top: auto; width: 100%;">
+                            <div class="slh_label">排序:</div>
+                            <ul class="clearfix" id="paixun">
+                                <li class="selected clearfix">
+                                    <a class="down moren">默认</a>
+                                </li>
+                                <li class="clearfix">
+                                    <a href="##" class="price_sort up">价格</a>
+                                </li>
+                                <li class="clearfix">
+                                    <a class="down sales" href="##">销量</a>
+                                </li>
+                                <li class="clearfix">
+                                    <a class="down" href="##">人气</a>
+                                </li>
+                                <li class="clearfix">
+                                    <a class="add_time" href="##">上架时间</a>
+                                </li>
+                                <li class="clearfix"><a class="show_check">只看特卖</a></li>
+                            </ul>
+
+                            <!--头部分页-->
+                            <div class="head_pagebtn clearfix">
+                                <a class="dis prev">上一页
+                                </a>
+                                <a class="enable next" href="##">下一页
+                                </a>
+                            </div>
+                            <div class="head_pageInfo">
+                                <span style="color:#ed154b;margin-left: 8px;">1</span>/43页
+                            </div>
+                            <div class="head_pagecount">
+                                共<span>1534</span>个商品
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!-- 加载数据 -->
+                    <div class="products_wrap">
+                        <ul class="clearfix" id="listAllcontent">
+                            <!-- <li class="item hai">
+                                <div class="item_wrap clearfix  " style="left: -16px;">
+                                    <div class="item_wrap_right">
+                                        <div class="s_l_pic">
+                                            <div class="icon_wrap clearfix">
+                                                <strong style="color: #ec2b8c">【海外自营】</strong>
+                                            </div>
+                                            <a href="##">
+                                                <img width="255" height="255" src="http://p0.jmstatic.com/product/000/817/817600_std/817600_350_350.jpg"
+                                                    style="display: inline;">
+                                            </a>
+                                        </div>
+
+                                        <div class="s_l_name">
+                                            <a href="##">
+                                                Itsskin 能量10精华液30ml
+                                            </a>
+                                        </div>
+                                        <div class="s_l_view_bg">
+                                            <div class="search_list_price">
+                                                <label>¥</label>
+                                                <span>69</span>
+                                            </div>
+                                        </div>
+                                        <div class="search_deal_buttom_bg clearfix">
+                                            <div class="search_pl">月销7651</div>
+                                        </div>
+                                        <div class="search_list_button">
+                                            <a class="track_click  zuhe_zhifu_dingjing" title="去看看"
+                                                href="####"></a>
+                                        </div>
+                                       
+                                        <p class="search_list_tags">
+                                            <span>紧致</span>
+                                            <span>保湿</span>
+                                            <span>美白</span>
+                                            <span>滋润</span>
+                                            <span>抗皱</span>
+                                            <span>控油</span>
+                                            <span>收敛毛孔</span>
+                                            <span>抗衰老</span>
+                                            <span>祛痕</span>
+                                            <span>抗氧化</span>
+                                            <span>柔肤</span>
+                                            <span>改善肤质</span>
+                                            <span>缩小毛孔</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li> -->
+                                               
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- 右侧固定条栏 -->
+    <div class="ibar" id="iBar" style="z-index: 9990; right: 0px; position: fixed; top: 0px; display: block; height: 100%">
+        <div class="ibar_main_panel" style="left: 0px;">
+            <ul class="ibar_mp_center">
+                <li class="mpbtn_login"><a href="###">
+                        <s></s>登录</a>
+                </li>
+                <li class="mpbtn_cart">
+                    <a href="##" id="loadcart">
+                        <s id="cardend"></s>
+                        <span class="text">购物车</span>
+                        <span class="cart_num">0</span>
+                    </a>
+                </li>
+                <li class="mpbtn_asset">
+                    <a href="##" class="sidebar">
+                        <s></s>我的财产
+                    </a>
+                    <div class="mp_tooltip" style="visibility: hidden">我的财产
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+                <li class="mpbtn_favorite">
+                    <a href="##" class="sidebar">
+                        <s></s>我的心愿单
+                    </a>
+                    <div class="mp_tooltip" style="visibility: hidden">我的心愿单
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+                <li class="mpbtn_histroy">
+                    <a href="##" class="sidebar">
+                        <s></s>
+                        我看过的</a>
+                    <div class="mp_tooltip" style="visibility: hidden">我看过的
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+            </ul>
+            <ul class="ibar_mp_bottom">
+                <li class="mpbtn_qrcode">
+                    <a href="##" class="phonejumei">
+                        <s></s>手机聚美
+                    </a>
+                    <div class="mp_qrcode" style="display: none">
+                        <img src="../images/qrcode.png" width="148" height="175">
+                        <s class="icon_arrow_white"></s>
+                    </div>
+                </li>
+                <li class="mpbtn_support">
+                    <a href="##" class="sidebar">
+                        <s></s>客服中心
+                    </a>
+                    <div class="mp_tooltip" style="visibility: hidden">客服中心
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+                <li class="mpbtn_gotop" id="gotop" style="display: none">
+                    <a href="##" class="btn_gotop sidebar">
+                        <s></s>
+                        返回顶部
+                    </a>
+                    <div class="mp_tooltip" style="visibility: hidden">返回顶部
+                        <s class="icon_arrow_right_black"></s>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 购物车 -->
+    <div class="ibar_sub_panel" style="display: block; right: -247px;z-index:99;position:fixed">
+        <a href="###" class="ibar_closebtn" title="关闭"></a>
+        <span class="ibar_loading_text">正在为您努力加载数据！</span>
+    
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/register.css">
+    <style>
+        #ehong-code-input{
+            width: 100%;
+            letter-spacing:2px;
+            margin:0px 8px 0px 0px;
+        }
+        .ehong-idcode-val{
+            height: 39px;
+            position:relative;
+            padding:1px 4px 1px 4px;
+            top:0px;
+            *top:-3px;
+            letter-spacing:4px;
+            /* display:inline; */
+            cursor:pointer;
+            font-size:16px;
+            font-family:"Courier New", Courier, monospace;
+            text-decoration:none;
+            font-weight:bold;
+        }
+        .ehong-idcode-val0{
+            border:solid 1px #A4CDED;	
+            background-color:#ECFAFB;
+        }
+
+        .ehong-idcode-val1{
+            border:solid 1px #A4CDED;	
+            background-color:#FCEFCF;
+        }
+        .ehong-idcode-val2{
+            border:solid 1px #6C9;	
+            background-color:#D0F0DF;
+        }
+        .ehong-idcode-val3{
+            border:solid 1px #6C9;	
+            background-color:#DCDDD8;
+        }
+        .ehong-idcode-val4{
+            border:solid 1px #6C9;	
+            background-color:#F1DEFF;
+        }
+        .ehong-idcode-val5{
+            border:solid 1px #6C9;	
+            background-color:#ACE1F1;
+        }
+        .ehong-code-val-tip{
+            font-size:12px;
+            color:#1098EC;
+            top:0px;
+            *top:-3px;	
+            position:relative;	
+            margin:0px 0px 0px 4px;
+            cursor:pointer;	
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="header_container">
+        <div id="logo">
+            <a href="###" id="home" title="聚美优品" style="background:url(../images/logo_new_v1.jpg) no-repeat top left;">
+                化妆品品牌排行榜大全网站聚美优品
+            </a>
+            <div class="header_logo_box">
+                <a href="##" class="top_link lightning"></a>
+                <a href="##" class="top_link gild"></a>
+                <a href="##" class="top_link credit"></a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="loginWrap">
+            <div class="loginPic ">
+                <a href="##" class="signup_link"></a>
+                <div class="loginBord">
+                    <div class="loginTit">
+                        <div class="tosignup">已有帐号<a href="##">在此登录</a></div>
+                        <h1><strong>用户注册</strong></h1>
+                    </div>
+                    <form>
+                        <div class="line">
+                            <div class="textbox_ui">
+                                <input type="text" id="username" placeholder="用户名" autofocus="" autocomplete="off"
+                                    value="">
+                                <div class="focus_text">请输入用户名</div>
+                                <div class="invalid" style="display: none;">
+                                    <i></i>
+                                    <div class="msg">请输入用户名</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line verityWrap clearfix">
+                            <div class="textbox_ui sms_verify_wrapper fl">
+                                <input type="text" id="mobile_verify" placeholder="验证码" autocomplete="off">
+                                <div class="focus_text">请输入验证码</div>
+                                <div class="hint"></div>
+                                <div class="invalid" style="display: none;">
+                                    <i></i>
+                                    <div class="msg">输入验证码不正确</div>
+                                </div>
+                            </div>
+                            <span id="idcode" class="phonecode fr"></span>
+                        </div>
+                        <div class="line">
+                            <div class="textbox_ui">
+                                <input type="password" placeholder="密码" id="password" autocomplete="off">
+                                <div class="focus_text">
+                                    <p class="default">6-16个字符，建议使用字母加数字或符号组合</p>
+                                    <div class="safe" style="display: none">
+                                        <div class="pw_isstrong clearfix">
+                                            <div class="pw_level pw_success" data-class="pw_weak" data-strength="weak">弱</div>
+                                            <div class="pw_level pw_success" data-class="pw_normal" data-strength="normal">中</div>
+                                            <div class="pw_level pw_success" data-class="pw_strong" data-strength="strong"
+                                                style="border-right:0">强</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="valid"></i>
+                                <div class="invalid" style="display: none;">
+                                    <i></i>
+                                    <div class="msg">21212121</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="textbox_ui">
+                                <input type="password" id="password2" placeholder="重复密码" autocomplete="off">
+                                <div class="focus_text">请再次输入密码</div>
+                                <i class="valid"></i>
+                                <div class="invalid" style="display: none;">
+                                    <i></i>
+                                    <div class="msg">2121212</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="act" style="margin-left: 0px;">
+                            <p>
+                                <input id="submit_btn" class="submit_btn" value="同意协议并注册" name="">
+                            </p>
+                            <p>
+                                <a href="http://www.jumei.com/help/user_terms" rel="nofollow" target="_blank" style="color:#ed145b;">《聚美优品用户协议》</a>
+                            </p>
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_white" style="padding-top:5px;background: none;border-top: none;">
+        <div class="footer_con">
+            <p class="footer_copy_con">
+                Copyright © 2010-2015 北京创锐文化传媒有限公司 Jumei.com 保留一切权利。客服热线：400-123-8888 <br>
+                京公网安备 11010102001226 号 | <a href="##">京ICP证111033号</a>
+                | 食品流通许可证 SP1101051110165515（1-1）
+                | <a href="##">营业执照</a>
+                | <a href="##">公示制度</a>
+            </p>
+            <p>
+                <a href="javascript:void(0)" class="footer_copy_logo logo01" rel="nofollow"></a>
+                <a href="##" class="footer_copy_logo logo02" rel="nofollow"></a>
+                <a href="javascript:void(0)" class="footer_copy_logo logo03" rel="nofollow"></a>
+                <a href="javascript:void(0)" class="footer_copy_logo logo04" rel="nofollow"></a>
+                <a href="##" class="footer_copy_logo logo05" rel="nofollow"></a>
+            </p>
+        </div>
+    </div>
+
+
+    <script src="../lib/jquery2.0.3.js"></script>
+    <script src="../lib/jquery.idcode.js"></script>
+    <script>
+        $(function () {
+
+            var keyname = false;
+
+            $("#username").blur(function () {
+
+                //用户名正则，4到16位（字母，数字，下划线）
+                var uPattern = /^[a-zA-Z0-9_]{4,16}$/;
+                var val = $("#username").val().trim();
+                if (uPattern.test(val)) {
+                    $.ajax({
+                        type: "post",
+                        data: {
+                            username: val
+                        },
+                        url: "../api/username.php",
+                        success: function (str) {
+                            //console.log(str);
+                            if (str == "1") {
+                                //console.log("可以注册");
+                                //console.log($(this))
+                                $("#username").siblings(".invalid").css({ "display": "block" });
+                                $("#username").siblings(".invalid").find(".msg").html("用户名正确");
+                                $("#username").siblings(".invalid").find("i").css({ "backgroundPosition": "0 -124px" });
+                                keyname = true;
+                            } else {
+                                $("#username").siblings(".invalid").css({ "display": "block" });
+                                $("#username").siblings(".invalid").find(".msg").html("用户名已被注册，请换一个");
+                                $("#username").siblings(".invalid").find("i").css({ "backgroundPosition": "0 -100px" });
+                                keyname = false;
+                            }
+                        }
+                    });
+                } else {
+                    //不通过正则验证
+                    //console.log($(this).siblings(".invalid"));
+                    $(this).siblings(".invalid").css({ "display": "block" });
+                    $(this).siblings(".invalid").find(".msg").html("用户名不正确");
+                    $("#username").siblings(".invalid").find("i").css({ "backgroundPosition": "0 -100px" });
+                    keyname = false;
+                }
+                //聚焦
+                $("#username").focus(function () {
+                    $(this).siblings(".invalid").css({ "display": "none" });
+                });
+
+            });
+
+
+
+            //验证码验证
+            $.idcode.setCode();
+            var keycode = false;  //验证码开关
+            $("#mobile_verify").blur(function () {
+                var val = $(this).val().trim();
+                var arr = [];  //存随机数
+                var j = 0;  //判断整个个数  5才对
+                $("#ehong-code").children().each(function () {
+                    arr.push($(this).html());
+                });
+                //console.log(val, arr);
+                if (val.length == arr.length) {
+
+                    for (var i = 0; i < arr.length; i++) {
+                        if (val[i].toLowerCase() == arr[i].toLowerCase()) {
+                            j++;
+                        }
+                    }
+                    if (j == 5) {
+                        keycode = true;
+                        $("#mobile_verify").siblings(".invalid").css({ "display": "block" });
+                        $("#mobile_verify").siblings(".invalid").find(".msg").html("验证码正确");
+                        $("#mobile_verify").siblings(".invalid").find("i").css({ "backgroundPosition": "0 -124px" });
+                    } else {
+                        keycode = false;
+                        $("#mobile_verify").siblings(".invalid").css({ "display": "block" });
+                        $("#mobile_verify").siblings(".invalid").find(".msg").html("验证码不正确");
+                        $("#mobile_verify").siblings(".invalid").find("i").css({ "backgroundPosition": "0 -100px" });
+
+                    }
+                } else {
+                    keycode = false;
+                    $("#mobile_verify").siblings(".invalid").css({ "display": "block" });
+                    $("#mobile_verify").siblings(".invalid").find(".msg").html("验证码不正确");
+                    $("#mobile_verify").siblings(".invalid").find("i").css({ "backgroundPosition": "0 -100px" });
+                }
+                //console.log(keycode);
+                //聚焦
+                $("#mobile_verify").focus(function () {
+                    $(this).siblings(".invalid").css({ "display": "none" });
+                });
+
+            });
+
+            //密码验证
+            var passpattern = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
+            $("#password").blur(function () {
+                var val = $(this).val().trim();
+                //console.log(passpattern.test(val));
+                if (passpattern.test(val)) {
+                    $("#password").siblings(".invalid").css({ "display": "block" });
+                    $("#password").siblings(".invalid").find(".msg").html("密码正确");
+                    $("#password").siblings(".invalid").find("i").css({ "backgroundPosition": "0 -124px" });
+                } else {
+                    $(this).siblings(".invalid").css({ "display": "block" });
+                    $(this).siblings(".invalid").find(".msg").html("密码不正确");
+                    $(this).siblings(".invalid").find("i").css({ "backgroundPosition": "0 -100px" });
+                }
+                //聚焦
+                $("#password").focus(function () {
+                    $(this).siblings(".invalid").css({ "display": "none" });
+                });
+            });
+
+            //密码确认
+            var keypass = false;
+            $("#password2").blur(function () {
+                var j = 0;
+                var val = $(this).val().trim();
+                var passwordVal = $("#password").val().trim();
+                if ((val.length == passwordVal.length) && passwordVal.length > 0) {
+                    for (var i = 0; i < val.length; i++) {
+                        if (val[i] == passwordVal[i]) {
+                            j++;
+                        }
+                    }
+                    //console.log(j)
+                    if (j == val.length) {
+                        keypass = true;
+                        //console.log("true")
+                        $(this).siblings(".invalid").css({ "display": "block" });
+                        $(this).siblings(".invalid").find(".msg").html("密码正确");
+                        $(this).siblings(".invalid").find("i").css({ "backgroundPosition": "0 -124px" });
+                    } else {
+                        keypass = false;
+                        $(this).siblings(".invalid").css({ "display": "block" });
+                        $(this).siblings(".invalid").find(".msg").html("两次密码输入不正确,请再输入一次");
+                        $(this).siblings(".invalid").find("i").css({ "backgroundPosition": "0 -100px" });
+                    }
+                } else {
+                    keypass = false;
+                    $(this).siblings(".invalid").css({ "display": "block" });
+                    $(this).siblings(".invalid").find(".msg").html("两次密码输入不正确,请再输入一次");
+                    $(this).siblings(".invalid").find("i").css({ "backgroundPosition": "0 -100px" });
+                }
+                $("#password2").focus(function () {
+                    $(this).siblings(".invalid").css({ "display": "none" });
+                });
+
+
+
+            });
+
+            //提交
+            $("#submit_btn").click(function () {
+
+                if ((keypass == true) && (keycode == true) && (keyname == true)) {
+
+                    var username = $("#username").val().trim();
+                    var password = $("#password").val().trim();
+                    $.ajax({
+                        type: "post",
+                        data: {
+                            "username": username,
+                            "password": password
+                        },
+                        url: "../api/user.php",
+                        success: function (str) {
+                            
+                            //console.log(str);
+                            alert("注册成功");
+                            if(str) {
+                                location.href = "login.html";
+                            }
+                        }
+                    });
+                }
+
+
+            });
+
+
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
